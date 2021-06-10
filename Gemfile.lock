@@ -211,6 +211,7 @@ PLATFORMS
 DEPENDENCIES
   ZenTest (= 4.12.0)
   bigdecimal (= 1.4.2)
+  bundler (= 1.15.3)
   byebug
   capybara (= 2.4.4)
   coffee-rails (~> 4.1.0)

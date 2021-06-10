@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '2.7.0'
 gem 'rails', '4.2.9'
 gem 'bigdecimal', '1.4.2'
+gem 'bundler', '1.15.3'
 
 # for Heroku deployment - as described in Ap. A of ELLS book
 group :development, :test do
