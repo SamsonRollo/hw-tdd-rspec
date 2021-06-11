@@ -17,7 +17,7 @@ script:
   - bundle exec rake db:setup
   - bundle exec rake cucumber
   - $CCTR format-coverage --output coverage/codeclimate.$SUITE.json
-  - bundle exec rspec
+  - bundle exec rspec --require rails_helper.rb --require spec_helper.rb
   - $CCTR format-coverage --output coverage/codeclimate.$SUITE.json
 after_script:
   - $CCTR sum-coverage coverage/codeclimate.*.json | $CCTR upload-coverage
