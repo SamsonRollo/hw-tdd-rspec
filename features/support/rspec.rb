@@ -1,5 +1,3 @@
-require 'simplecov' 
-SimpleCov.start 'rails'
 require 'rspec/core'
 # prevent deprecation warnings when using web_steps.rb from
 #  cucumber_rails_training_wheels gem
