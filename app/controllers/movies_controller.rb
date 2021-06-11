@@ -37,6 +37,15 @@ class MoviesController < ApplicationController
     # default: render 'new' template
   end
 
+  def match
+    movie = Movie.where(:id => params[:id]).first
+    if movie[:director] == "" 
+      flash[:message] = "'#{movie[:title]}' has no director info"
+      redirect_to movies_path
+    end
+    @movies = Movie.where(:director => movie[:director])
+  end
+
   def create
     @movie = Movie.create!(movie_params)
     flash[:notice] = "#{@movie.title} was successfully created."
