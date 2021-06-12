@@ -1,22 +1,24 @@
 require 'rails_helper'
 
-RSpec.describe "Movies", type: :request do
+RSpec.describe MoviesController, type: :controller do
 
 	before(:each) do
-		@movie =  double('Movie')
+		@movies =  Movie.all
 	end
 
   describe "GET movies#index" do 
     it'should be in index page' do 
-      get movies_path
+      get "index"
       expect(response).to render_template(:index)
     end
-
   end
    describe "GET movies#show" do 
-    it'should be in show page' do 
-      get movies_path(@movie)
-      expect(response).to render_template(:index)
+    it'should be in show page' do
+      # allow(@movie).to receive(:title).and_return('Alladin')
+      # allow(@movie).to receive(:rating).and_return('G')
+      # allow(@movie).to receive(:release_date).and_return('25-Nov-1992') 
+      # "show"
+      # expect(response).to render_template(:show)
     end  
   end
   #  describe "GET movies#index" do 
@@ -41,3 +43,4 @@ RSpec.describe "Movies", type: :request do
     
   # end
 end
+
